@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp CSV Example", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp Excel Example", "ConsoleApp Excel Example\ConsoleApp Excel Example.csproj", "{34D2844C-4899-4836-B46C-B5A05698F6DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF Example CSV", "WPF Example CSV\WPF Example CSV.csproj", "{3491C45F-CCEB-4F05-8C8E-DFAC3D94A2BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF Example Excel", "WPF Example CSV\WPF Example Excel.csproj", "{3491C45F-CCEB-4F05-8C8E-DFAC3D94A2BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
