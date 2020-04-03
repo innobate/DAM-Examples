@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp CSV Example", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp Excel Example", "ConsoleApp Excel Example\ConsoleApp Excel Example.csproj", "{34D2844C-4899-4836-B46C-B5A05698F6DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF Example Excel", "WPF Example CSV\WPF Example Excel.csproj", "{3491C45F-CCEB-4F05-8C8E-DFAC3D94A2BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF Example Excel", "WPF Example CSV\WPF Example Excel.csproj", "{3491C45F-CCEB-4F05-8C8E-DFAC3D94A2BB}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CountriesDB", "CountriesDB\CountriesDB.sqlproj", "{49F12448-07B4-41F3-9826-85AB1D009947}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp NET45", "ConsoleApp NET45\ConsoleApp NET45.csproj", "{6FABB927-575B-471C-B9CF-E80776B3C399}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp NET4", "ConsoleApp NET40\ConsoleApp NET4.csproj", "{3F0F2FD5-593E-41EF-8564-7C13C0E4943C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp Core 3", "ConsoleApp Core 3\ConsoleApp Core 3.csproj", "{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,14 @@ Global
 		{3F0F2FD5-593E-41EF-8564-7C13C0E4943C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F0F2FD5-593E-41EF-8564-7C13C0E4943C}.Release|x86.ActiveCfg = Release|Any CPU
 		{3F0F2FD5-593E-41EF-8564-7C13C0E4943C}.Release|x86.Build.0 = Release|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Debug|x86.Build.0 = Debug|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Release|x86.ActiveCfg = Release|Any CPU
+		{38DA35B9-7B49-48D7-A6AF-D5B0B6DDE40D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
