@@ -10,5 +10,12 @@ namespace WPF_Example_CSV
         public string name { get; set; }
         public string alpha2 { get; set; }
         public string alpha3 { get; set; }
+
+        public string Image
+        {
+            get {
+                return AppDomain.CurrentDomain.BaseDirectory + @"world-countries\flags\16x16\" + this.alpha2+".png"; 
+            }
+        }
     }
 }
