@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WPF Example CSV/obj
+/WPF Example CSV/bin/Debug/netcoreapp3.1
+/ConsoleApp Excel Example/bin/x86/Debug/netcoreapp3.1
+/ConsoleApp Excel Example/obj
+/ConsoleApp CSV Example/obj
+/ConsoleApp CSV Example/bin
+/CountriesDB/bin/Debug
+/CountriesDB/obj/Debug
+/ConsoleApp NET45/bin
+/ConsoleApp NET45/obj
+/ConsoleApp NET40/bin
+/ConsoleApp NET40/obj/Debug
+/ConsoleApp NET40/obj/Release
