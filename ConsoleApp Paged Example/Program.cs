@@ -1,14 +1,21 @@
 ﻿using DAM;
 using System;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace ConsoleApp_Paged_Example
 {
     class Program
     {
+        public static IConfiguration configuration;
         static void Main(string[] args)
         {
-            var connection = "Server=.//;Initial Catalog=CountriesDB;integrated security=True;Connection Timeout=3000;";
+            configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json",true, true)
+                .Build();
+
+            var connection = configuration.GetConnectionString("DefaultConnection");
 
             using (var dbManager = new DataAccessManager(SqlClientFactory.Instance, connection))
             {
