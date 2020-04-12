@@ -1,0 +1,98 @@
+﻿<#@ template language="C#" hostspecific="true" debug="True" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="$(ProjectDir)\packages\Innobate.DAM.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="DAM" #>
+<#
+    //**********************************************************************************************
+    // This T4 generates POCOs from the specified DB and saves them to the specified folder which 
+    // is relative to the template's location. One file per table/POCO.
+    //**********************************************************************************************
+
+    //****************************
+    // DEFINE YOUR VARIABLES HERE
+    //****************************
+ 
+    // The connection string of database to generate the POCOs for
+    string connectionString = "Server=.//;Initial Catalog=AdventureWorks;integrated security=True;MultipleActiveResultSets=true;Connection Timeout=3000;";
+    // The provider for database connection string
+    string provider = "System.Data.SqlClient";
+    // The namespace to apply to the generated classes
+    string classNamespace = "ConsoleApp_T4_POCO_Generator_Example.Models";
+    // The destination folder for the generated classes, relative to this file's location.
+    string destinationFolder = "Models";
+
+
+    //Initalise Data Access Manager
+    var dbManager = new DataAccessManager(provider, connectionString);
+
+    // Loop over each table and create a class file!
+    var tables = dbManager.GetTables();
+
+    foreach (Table table in tables)
+    {
+#>
+using System;
+
+namespace <#= classNamespace #>
+{
+    /// <summary>
+    /// Represents <#= table.TableName #> Entity.
+    /// NOTE: This class is generated from a T4 template - you should not modify it manually.
+    /// </summary>
+    public partial class <#= table.TableName #> 
+    {
+<# 
+        var columns = dbManager.GetColumns(table.TableName);
+        // Keep count so we don't whitespace the last property/column
+        //int columnCount = columns.Count;
+        int columnCount =100;
+        int i = 0;
+
+        // Iterate all columns
+        foreach (TableColumn col in columns)
+        {
+            i++;
+            string propertyType = col.DataType;
+
+
+#>
+        public <#= propertyType #> <#= col.ColumnName #> { get; set; }
+<#
+            // Do we insert the space?
+            if (i != columnCount)
+            {
+#>
+
+<#
+            }
+#>
+<#
+        }
+#>
+    }
+}      
+<#
+        // Write new POCO class to its own file
+        SaveOutput(table.TableName + ".cs", destinationFolder);
+    } 
+#>
+<#+
+    
+    void SaveOutput(string outputFileName, string destinationFolder)
+    {
+        // Write to destination folder
+        string templateDirectory = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), destinationFolder);
+        string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+        File.Delete(outputFilePath);
+        File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+
+        // Flush generation
+        this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+    }
+#>
